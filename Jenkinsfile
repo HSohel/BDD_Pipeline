@@ -9,7 +9,7 @@ pipeline {
       }
       stage('Test'){
           steps{
-              bat 'mvn -B clean install'
+              bat 'mvn -B clean verify'
               cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
               }
       }
